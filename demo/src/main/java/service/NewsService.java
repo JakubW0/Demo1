@@ -16,14 +16,13 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Service
-public class NewsService implements INewsService{
-
+//@Service
+public class NewsService implements INewsService {
     @Autowired
     private NewsRepository newsRepository;
 
     @Override
-    public List<News> findAllNews() {
-        return newsRepository.addNewNews(new News());
+    public List<News> findAll() {
+        return newsRepository.findAll();
     }
 }

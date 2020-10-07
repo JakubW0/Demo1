@@ -3,6 +3,7 @@ package repository;
 import lombok.*;
 import model.News;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import service.INewsService;
 
@@ -13,7 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Repository
+@Component
 public class NewsRepository implements INewsRepository {
 
     private List<News> newsList = new ArrayList<>();
@@ -21,6 +22,11 @@ public class NewsRepository implements INewsRepository {
     @Override
     public List<News> addNewNews(News news) {
         newsList.add(news);
+        return newsList;
+    }
+
+    @Override
+    public List<News> findAll() {
         return newsList;
     }
 

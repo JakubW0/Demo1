@@ -5,5 +5,5 @@ import model.News;
 import java.util.List;
 
 public interface INewsService {
-    List<News> findAllNews();
+    List<News> findAll();
 }
